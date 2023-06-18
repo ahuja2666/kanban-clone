@@ -61,8 +61,8 @@ const Board = () => {
     <DragDropContext
       onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
     >
-      <div className="flex mx-6 flex-col lg:flex-row">
-        <div className="flex mx-6 flex-col lg:flex-row m-2 min-h-[80px]">
+      <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row m-2 min-h-[80px]">
           {Object.entries(columns).map(([columnId, column], index) => {
             return (
               <Droppable key={columnId} droppableId={columnId}>

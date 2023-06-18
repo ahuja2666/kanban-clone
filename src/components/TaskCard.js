@@ -13,7 +13,6 @@ const TaskInformation = styled.div`
   padding: 0 15px;
   min-height: 106px;
   border-radius: 7px;
-  max-width: 350px;
   background: white;
   margin-top: 15px;
 
