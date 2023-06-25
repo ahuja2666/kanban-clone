@@ -3,7 +3,7 @@ import { Divider } from "@mui/material";
 
 export default function Sidebar() {
   return (
-    <aside className="hidden lg:block overflow-y-auto no-scrollbar min-w-[290px]">
+    <aside className="hidden lg:block overflow-y-auto no-scrollbar">
       <div className="flex flex-col overflow-y-auto border-r px-5 pt-4">
         <div className="flex justify-between items-center mb-4">
           <div className="flex justify-between items-center space-x-2">

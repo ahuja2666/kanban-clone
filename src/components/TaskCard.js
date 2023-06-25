@@ -1,41 +1,9 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import styled from '@emotion/styled';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 
 
-const TaskInformation = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 15px;
-  min-height: 106px;
-  border-radius: 7px;
-  background: white;
-  margin-top: 15px;
-
-  .secondary-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    font-size: 12px;
-    font-weight: 400px;
-    color: #7d7d7d;
-  }
-  /* .priority{ */
-  /* margin-right: 12px; */
-  /* align-self: center;
-    svg{
-      width: 12px !important;
-      height: 12px !important;
-      margin-right: 12px; */
-  /* margin-top: 2px; */
-  /* } */
-  /* } */
-`;
 
 const TaskCard = ({ item, index }) => {
   return (
@@ -46,7 +14,7 @@ const TaskCard = ({ item, index }) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <TaskInformation>
+          <div className='flex flex-col bg-white rounded-md p-5 my-4 max-w-xs'>
             <div className='flex justify-between my-2 w-full'>
               <div>
                 {(item?.chip === "Low") && <div className='px-2 py-1 rounded-md bg-[#DFA87433] text-[#D58D49]'>{item?.chip}</div>}
@@ -61,11 +29,21 @@ const TaskCard = ({ item, index }) => {
               <div>
                 <h3 className='font-semibold text-lg'>{item?.head}</h3>
               </div>
-              <div>
+              {(item?.taskImage?.length > 0) ? <div className='flex gap-2'>
+                {
+                  item?.taskImage?.map((img, ind) => {
+                    return (
+                      <div key={ind + "img"}>
+                        <img alt="task" src={img} className='rounded-md' />
+                      </div>
+                    )
+                  })
+                }
+              </div> : < div >
                 <p className='text-[#787486] text-sm'>{item?.Task}</p>
-              </div>
+              </div>}
             </div>
-            <div className='flex justify-between my-2 gap-2 items-center'>
+            <div className='flex justify-between my-2 gap-3 items-center'>
               <div>
                 <AvatarGroup>
                   {
@@ -77,30 +55,31 @@ const TaskCard = ({ item, index }) => {
                   }
                 </AvatarGroup>
               </div>
-              <div className='flex justify-between gap-2 items-center'>
+              <div className='flex justify-between gap-2'>
                 <div className='flex justify-between gap-2 items-center'>
                   <div>
                     <img height="20" width="20" alt="comments icon" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687096433/kanban-clone/message_mkdi8x.png" />
                   </div>
                   <div>
-                    <span className='text-sm text-[#787486]'>{item?.comments} comments</span>
+                    <span className='text-sm text-[#787486] whitespace-nowrap'>{item?.comments} comments</span>
                   </div>
                 </div>
                 <div className='flex justify-between gap-2 items-center'>
                   <div>
-                    <img height="20" width="20" alt="comments icon" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687096442/kanban-clone/folder-2_hpqniu.png" />
+                    <img height="20" width="20" alt="file icon" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687096442/kanban-clone/folder-2_hpqniu.png" />
                   </div>
                   <div>
-                    <span className='text-sm text-[#787486]'>{item?.files} files</span>
+                    <span className='text-sm text-[#787486] whitespace-nowrap'>{item?.files} files</span>
                   </div>
                 </div>
               </div>
             </div>
 
-          </TaskInformation>
+          </div>
         </div>
-      )}
-    </Draggable>
+      )
+      }
+    </Draggable >
   );
 };
 

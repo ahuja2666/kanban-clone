@@ -52,7 +52,7 @@ export default function HeroSection() {
         <div className="flex justify-between items-center w-full">
           <div className="flex justify-between items-center">
             <div className="mx-2">
-              <h2 className="font-semibold text-4xl">Mobile App</h2>
+              <h2 className="font-semibold text-2xl lg:text-4xl">Mobile App</h2>
             </div>
             <div className="mx-2">
               <img className="cursor-pointer" height="25" width="25" alt="edit icon" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687069332/kanban-clone/arrow-square-up_mcup82.png" />
@@ -62,7 +62,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="flex justify-between items-center gap-2">
-            <div className="cursor-pointer">
+            <div className="cursor-pointer lg:block hidden">
               <div className="flex justify-between items-center gap-2">
                 <div>
                   <img height="15" width="15" alt="plus icon" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687069381/kanban-clone/add-square_gnf0ch.png" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='lg:block hidden'>
               <AvatarGroup classes={{ avatar: classes.avatar }} total={6}>
                 <Avatar alt="Remy Sharp" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687070958/kanban-clone/Ellipse_12_ioshbq.png" />
                 <Avatar alt="Travis Howard" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687071065/kanban-clone/Ellipse_13_dguqst.png" />
@@ -84,28 +84,28 @@ export default function HeroSection() {
         </div>
         <div className="flex justify-between items-center w-full mx-2">
           <div className='flex justify-between gap-3'>
-            <div>
-              <Button sx={buttonSx} variant="outlined" startIcon={<FilterIcon />} endIcon={<ArrowDownIcon />}>
+            <div className='lg:block hidden'>
+              <Button size="small" sx={buttonSx} variant="outlined" startIcon={<FilterIcon />} endIcon={<ArrowDownIcon />}>
                 Filter
               </Button>
             </div>
-            <div>
-              <Button sx={buttonSx} variant="outlined" startIcon={<CalendarIcon />} endIcon={<ArrowDownIcon />}>
+            <div className='lg:block hidden'>
+              <Button size="small" sx={buttonSx} variant="outlined" startIcon={<CalendarIcon />} endIcon={<ArrowDownIcon />}>
                 Today
               </Button>
             </div>
           </div>
           <div className='flex justify-between items-center gap-5 mr-2'>
-            <div>
-              <Button sx={buttonSx} variant="outlined" startIcon={<PeopleIcon />}>
+            <div className='lg:block hidden'>
+              <Button size="small" sx={buttonSx} variant="outlined" startIcon={<PeopleIcon />}>
                 Share
               </Button>
             </div>
             <Divider flexItem orientation="vertical" />
-            <div>
+            <div className='lg:block hidden'>
               <img className='cursor-pointer' height="40" width="40" alt="snackbar" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687076989/kanban-clone/Group_612_isqjiw.png" />
             </div>
-            <div>
+            <div className='lg:block hidden'>
               <img className='cursor-pointer' height="20" width="20" alt="snackbar" src="https://res.cloudinary.com/dfegprdja/image/upload/v1687077011/kanban-clone/menu_u0nrct.png" />
             </div>
           </div>

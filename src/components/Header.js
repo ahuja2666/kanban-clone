@@ -15,7 +15,7 @@ export default function Header() {
               </svg>
             </div>
             <input
-              className="w-96 rounded-md bg-[#F5F5F5] text-[#787486] leading-tight focus:outline-none py-2 px-2"
+              className="w-70 rounded-md bg-[#F5F5F5] text-[#787486] leading-tight focus:outline-none py-2 px-2"
               type="text" placeholder="Search for anything..." />
           </div>
           <div className="flex justify-between items-center">
@@ -33,7 +33,7 @@ export default function Header() {
             <div className="flex justify-between items-center mx-5">
               <div className="flex flex-col mr-4">
                 <div>
-                  <h3 className="text-[#0D062D] font-normal text-[16px]">Anima Agrawal</h3>
+                  <h3 className="text-[#0D062D] font-normal text-md whitespace-nowrap">Anima Agrawal</h3>
                 </div>
                 <div className="self-end">
                   <h5 className="text-[#787486] text-sm">U.P, India</h5>
